@@ -16,6 +16,16 @@ app.get('/', (req, res) => {
     rollbar.info('Html was monitored successfully!')
 })
 
+const numbers = []
+
+app.get('/api/number', (req, res) => {
+    const { number } = req.data
+    numbers.push(number)
+
+    rollbar.log(`The number is ${number}`)
+    res.status(200).send(number)
+})
+
 const port = process.env.PORT || 5150
 
 app.use(rollbar.errorHandler())
