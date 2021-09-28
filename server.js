@@ -3,8 +3,8 @@ const path = require('path')
 const app = express()
 app.use(express.json())
 
-
 const Rollbar = require('rollbar')
+
 const rollbar = new rollbar({
     accessToken: '92243ec78f04409198c46f650b5dfb40',
     captureUncaught: true,
